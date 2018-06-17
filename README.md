@@ -1,4 +1,10 @@
-# Chmod [![Build Status](https://travis-ci.org/popomore/chmod.png?branch=master)](https://travis-ci.org/popomore/chmod) [![Coverage Status](https://coveralls.io/repos/popomore/chmod/badge.png?branch=master)](https://coveralls.io/r/popomore/chmod?branch=master) 
+# Chmod
+
+Forked from [https://github.com/popomore/chmod]() - added .bin command so that it may be used within other `package.json` build scripts. To use, include this module in `dev-dependencies` and within a `package.json` `script` section:
+
+```json
+	"buildCLI": "rollup src/cli.js --f iife > cli.js && chmod(cli.js, 755)"
+```
 
 Inspired by [gulp-chmod](https://github.com/sindresorhus/gulp-chmod), but can be used everywhere.
 
@@ -6,20 +12,20 @@ Inspired by [gulp-chmod](https://github.com/sindresorhus/gulp-chmod), but can be
 
 ## Install
 
-```
+```bash
 $ npm install chmod -g
 ```
 
 ## Usage
 
-```
+```javascript
 var chmod = require('chmod');
 chmod(file, 777);
 ```
 
 Or you can use object instead of number, see [stat-mode](https://github.com/TooTallNate/stat-mode)
 
-```
+```javascript
 chmod(file, {
   owner: {
     read: true,
@@ -41,7 +47,7 @@ chmod(file, {
 
 You can also write a object Simply when the same for each
 
-```
+```javascript
 chmod(file, {
   read: true
 });
@@ -63,6 +69,6 @@ chmod(file, {
 
 Otherwise will throw
 
-## LISENCE
+## LICENSE
 
 Copyright (c) 2014 popomore. Licensed under the MIT license.
