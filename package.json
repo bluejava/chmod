@@ -1,26 +1,32 @@
 {
-  "name": "chmod",
-  "version": "0.2.1",
-  "description": "chmod for nodejs",
-  "main": "index",
-  "dependencies": {
-    "stat-mode": "~0.1.0",
-    "deep-extend": "^0.2.8"
-  },
-  "devDependencies": {
-    "mocha": "~1.17.1",
-    "should": "~3.1.3",
-    "coveralls": "~2.8.0",
-    "istanbul": "~0.2.6"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/popomore/chmod"
-  },
-  "homepage": "https://github.com/popomore/chmod",
-  "author": "popomore <sakura9515@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "test": "make test"
-  }
+	"name": "chmod",
+	"version": "0.3.0",
+	"description": "chmod for nodejs",
+	"main": "index",
+	"dependencies": {
+		"stat-mode": "~0.1.0",
+		"deep-extend": "^0.2.8"
+	},
+	"devDependencies": {
+		"coveralls": "~2.8.0",
+		"istanbul": "~0.2.6",
+		"mocha": "~1.17.1",
+		"rollup": "^0.60.7",
+		"should": "~3.1.3"
+	},
+	"bin": {
+		"chmod": "cli.js"
+	},
+	"scripts": {
+		"test": "make test",
+		"build": "npm run buildCLI",
+		"buildCLI": "node ./buildCLI && rollup cliMod.js --f iife >> cli.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/popomore/chmod"
+	},
+	"homepage": "https://github.com/popomore/chmod",
+	"author": "popomore <sakura9515@gmail.com>",
+	"license": "MIT"
 }
