@@ -1,6 +1,6 @@
 # Chmod
 
-Forked from [https://github.com/popomore/chmod]() - added .bin command so that it may be used within other `package.json` build scripts. To use, include this module in `dev-dependencies` and within a `package.json` `script` section:
+Forked from [https://github.com/popomore/chmod](https://github.com/popomore/chmod) - added .bin command so that it may be used within other `package.json` build scripts. To use, include this module in `dev-dependencies` and within a `package.json` `script` section:
 
 ```json
 	"buildCLI": "rollup src/cli.js --f iife > cli.js && chmod(cli.js, 755)"
